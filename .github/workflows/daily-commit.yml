@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '30 5 * * *'  # Runs daily at 05:30 UTC
+    - cron: '30 5 * * *'  # Daily at 05:30 UTC
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 23f3000113@ds.study.iitm.ac.in - Update timestamp file
+      - name: 23f3000113@ds.study.iitm.ac.in  # ✅ Exactly as required
         run: |
           echo "Last updated at $(date -u)" > timestamp.txt
 
