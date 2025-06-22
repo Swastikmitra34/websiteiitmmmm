@@ -4,7 +4,8 @@ on:
   schedule:
     - cron: '30 5 * * *'  # Runs daily at 05:30 UTC
   workflow_dispatch:       # (Optional) lets you trigger manually
-
+permissions:
+  contents: write 
 jobs:
   commit_job:
     runs-on: ubuntu-latest
