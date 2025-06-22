@@ -1,4 +1,4 @@
-name: 23f3000113@ds.study.iitm.ac.in  
+name: Daily Commit
 
 on:
   schedule:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: commit
+      - name: 23f3000113@ds.study.iitm.ac.in
         run: |
           echo "Last updated at $(date -u)" > timestamp.txt
 
