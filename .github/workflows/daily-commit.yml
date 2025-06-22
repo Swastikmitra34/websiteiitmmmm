@@ -3,9 +3,11 @@ name: Daily Commit
 on:
   schedule:
     - cron: '30 5 * * *'  # Runs daily at 05:30 UTC
-  workflow_dispatch:       # (Optional) lets you trigger manually
+  workflow_dispatch:
+
 permissions:
-  contents: write 
+  contents: write
+
 jobs:
   commit_job:
     runs-on: ubuntu-latest
@@ -13,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update timestamp file (23f3000113@ds.study.iitm.ac.in)
+      - name: 23f3000113@ds.study.iitm.ac.in - Update timestamp file
         run: |
           echo "Last updated at $(date -u)" > timestamp.txt
 
@@ -22,5 +24,5 @@ jobs:
           git config user.name "GitHub Action Bot"
           git config user.email "action@github.com"
           git add timestamp.txt
-          git commit -m "Daily commit from GitHub Actions"
+          git commit -m "Daily commit from GitHub Actions" || echo "No changes to commit"
           git push
